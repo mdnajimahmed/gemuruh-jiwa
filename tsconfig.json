@@ -20,9 +20,9 @@
   },
   "include": ["src/index.ts"],         // Only include entry point
   "exclude": ["node_modules", "dist"],
+  
   "declaration": true,
-  "declarationDir": "build",
-
-  "allowSyntheticDefaultImports": true,
-  "experimentalDecorators": true,
+  "emitDeclarationOnly": true,
+  "declarationMap": true,
+  "declarationDir": "types"
 }

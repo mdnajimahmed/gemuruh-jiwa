@@ -14,8 +14,8 @@
     "exec": "npm run build && npm run run" 
   },
   "exports": {
-    "import": "./dist/esm/index.js",   
-    "require": "./dist/cjs/index.js"   
+    "import": "./build/esm/index.js",   
+    "require": "./build/cjs/index.js"   
   },
   "author": "",
   "license": "ISC",
