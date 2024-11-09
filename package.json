@@ -2,20 +2,25 @@
   "name": "typescript-learning",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/cjs/index.js",       
+  "module": "dist/esm/index.js",     
+  "types": "types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npx eslint src/*",
     "lint:fix": "npx eslint --fix src/*",
     "cls": "node -e \"console.clear()\"",
     "clean": "rimraf ./build/**",
-    "build": "npm run clean && npm run lint && npx tsc", 
+    "build": "npm run clean && npm run lint && npm run compile", 
     "run": "node build/index.js", 
-    "exec": "npm run build && npm run run" 
+    "exec": "npm run build && npm run run" ,
+    "compile:cjs": "npx tsc -p tsconfig.cjs.json",
+    "compile:esm": "npx tsc -p tsconfig.esm.json",
+    "compile": "npm run compile:cjs && npm run compile:esm"
   },
   "exports": {
-    "import": "./build/esm/index.js",   
-    "require": "./build/cjs/index.js"   
+    "import": "./esm/index.js",   
+    "require": "./cjs/index.js"
   },
   "author": "",
   "license": "ISC",

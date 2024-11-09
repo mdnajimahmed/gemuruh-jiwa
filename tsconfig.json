@@ -1,28 +1,26 @@
 {
   "compilerOptions": {
-    "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
-    "module": "commonjs" /* Specify what module code is generated. */,
-    "rootDir": "./src",                                  /* Specify the root folder within your source files. */
-    "baseUrl": "./src", // Set the baseUrl to your source directory
+    "target": "es2016",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "baseUrl": "./src",
     "paths": {
       "test/*": ["test/*"],
       "~/*": ["src/*"]
     },
-    "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
-    "outDir": "./build" /* Specify an output folder for all emitted files. */,
-    "removeComments": true,                           /* Disable emitting comments. */
-    "noEmitOnError": true,                            /* Disable emitting files if any type checking errors are reported. */
-    "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
-    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
-    "strict": true /* Enable all strict type-checking options. */,
-    "noImplicitAny": true,  // Enforce no 'any' types
-    "skipLibCheck": true /* Skip type checking all .d.ts files. */
+    "sourceMap": true,
+    "outDir": "./build/dist",                // JavaScript output directory
+    "removeComments": true,
+    "noEmitOnError": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "declaration": true,                // Enable declaration files
+    "declarationMap": true,             // Generate source maps for declarations
+    "declarationDir": "./build/types"         // Directory for declaration files
   },
-  "include": ["src/index.ts"],         // Only include entry point
-  "exclude": ["node_modules", "dist"],
-  
-  "declaration": true,
-  "emitDeclarationOnly": true,
-  "declarationMap": true,
-  "declarationDir": "types"
+  "include": ["src/**/*"],              // Include all TypeScript files in src
+  "exclude": ["node_modules", "build"]
 }
