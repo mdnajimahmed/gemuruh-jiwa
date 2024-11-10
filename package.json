@@ -6,7 +6,8 @@
   "module": "dist/esm/index.js",
   "types": "types/index.d.ts",
   "files": [
-    "build",
+    "dist",
+    "types",
     "package.json"
   ],
   "scripts": {

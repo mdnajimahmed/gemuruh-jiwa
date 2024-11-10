@@ -32,12 +32,9 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish
         continue-on-error: true
-      - name: List files to upload
-        run: |
-          echo "Listing files in dist/cjs"
-          ls -R build/dist/cjs
-          echo "Listing files in dist/esm"
-          ls -R build/dist/esm
-          echo "Listing files in types"
-          ls -R build/types
+      - name: Copy build/dist to dist
+        run: cp -r build/dist ./dist
+
+      - name: Copy build/types to types
+        run: cp -r build/types ./types
 
