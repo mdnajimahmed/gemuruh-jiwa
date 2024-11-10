@@ -41,13 +41,3 @@ jobs:
           echo "Listing files in types"
           ls -R build/types
 
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          files: |
-            build/dist/cjs/**
-            build/dist/esm/**
-            build/types/**
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN_GITHUB }}
-        continue-on-error: true
