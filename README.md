@@ -10,3 +10,7 @@ Write a library/module in Typescript that can be used like -
 
 # Why
 Coz it's weekend and it's me time :grinning:
+
+# Tagging
+git tag v1.0.0
+git push origin v1.0.0
