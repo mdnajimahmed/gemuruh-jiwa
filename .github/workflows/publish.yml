@@ -32,6 +32,14 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish
         continue-on-error: true
+      - name: List files to upload
+        run: |
+          echo "Listing files in dist/cjs"
+          ls -R build/dist/cjs
+          echo "Listing files in dist/esm"
+          ls -R build/dist/esm
+          echo "Listing files in types"
+          ls -R build/types
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
@@ -42,3 +50,4 @@ jobs:
             build/types/**
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN_GITHUB }}
+        continue-on-error: true
