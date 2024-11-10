@@ -1,6 +1,6 @@
 {
   "name": "gemuruh-jiwa",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "dist/cjs/index.js",       
   "module": "dist/esm/index.js",
@@ -24,8 +24,8 @@
     "compile": "npm run compile:cjs && npm run compile:esm"
   },
   "exports": {
-    "import": "./esm/index.js",   
-    "require": "./cjs/index.js"
+    "import": "./dist/esm/index.js",   
+    "require": "./dist/cjs/index.js"
   },
   "author": "",
   "license": "ISC",
