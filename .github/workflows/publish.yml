@@ -27,14 +27,26 @@ jobs:
       - name: Build the library
         run: npm run build
 
-      - name: Publish to npm
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish
-        continue-on-error: true
       - name: Copy build/dist to dist
         run: cp -r build/dist ./dist
 
       - name: Copy build/types to types
         run: cp -r build/types ./types
+      - name: List files to upload
+        run: |
+          echo "Listing root"
+          ls -la
+          echo "Listing files in dist/cjs"
+          ls -R dist/cjs
+          echo "Listing files in dist/esm"
+          ls -R dist/esm
+          echo "Listing files in types"
+          ls -R types
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
+        continue-on-error: true
+
 
