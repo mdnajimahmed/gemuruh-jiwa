@@ -1,17 +1,7 @@
 {
     "extends": "./tsconfig.json",
     "compilerOptions": {
-        "target": "ESNext",
         "module": "ESNext",
         "outDir": "./build/dist/esm",
-        "declaration": true,
-        "allowSyntheticDefaultImports":true,
-        "skipLibCheck": true,
-        "strict": true,
-        "noImplicitAny": true,
-        "removeComments": true,
-        "moduleResolution": "node",
-        "declarationMap": true, 
-        "esModuleInterop": true,  
     }
 }

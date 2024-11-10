@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
+    "target": "ESNext",
     "rootDir": "./src",
     "baseUrl": "./src",
     "paths": {
@@ -9,7 +8,7 @@
       "~/*": ["src/*"]
     },
     "sourceMap": true,
-    "outDir": "./build/dist",                // JavaScript output directory
+    "outDir": "./build/dist",                
     "removeComments": true,
     "noEmitOnError": true,
     "esModuleInterop": true,
@@ -17,10 +16,12 @@
     "strict": true,
     "noImplicitAny": true,
     "skipLibCheck": true,
-    "declaration": true,                // Enable declaration files
-    "declarationMap": true,             // Generate source maps for declarations
-    "declarationDir": "./build/types"         // Directory for declaration files
+    "declaration": true,               
+    "declarationMap": true,             
+    "declarationDir": "./build/types" ,        
+    "allowSyntheticDefaultImports":true,
+    "moduleResolution": "node",
   },
-  "include": ["src/**/*"],              // Include all TypeScript files in src
+  "include": ["src/**/*"],              
   "exclude": ["node_modules", "build"]
 }
