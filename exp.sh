@@ -1,3 +1,4 @@
+npm run build
 rm -rf ./dist ./types
 mkdir -p ./dist ./types
 mv build/dist/* ./dist
