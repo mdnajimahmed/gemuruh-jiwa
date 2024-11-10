@@ -14,3 +14,6 @@ Coz it's weekend and it's me time :grinning:
 # Tagging
 git tag v1.0.0
 git push origin v1.0.0
+
+
+npm install --save-dev webpack webpack-cli typescript ts-loader webpack-node-externals @babel/core @babel/preset-env babel-loader
