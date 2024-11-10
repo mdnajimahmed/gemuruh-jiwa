@@ -1,6 +1,8 @@
 name: Publish to npm
 
 on:
+   # Trigger the workflow manually
+  workflow_dispatch:
   push:
     tags:
       - "v*.*.*"  # Trigger only for version tags like v1.0.0
@@ -29,10 +31,14 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish
+        continue-on-error: true
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          files: build/**
+          files: |
+            build/dist/cjs/**
+            build/dist/esm/**
+            build/types/**
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN_GITHUB }}
